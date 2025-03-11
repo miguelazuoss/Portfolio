@@ -72,7 +72,7 @@ nav {
     justify-content: end;
 }
 
-.MoveSections {
+.moveSections {
     font-size: 15px;
     margin-right: 15px;
     width: 150px;
@@ -87,12 +87,12 @@ nav {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-.MoveSections:hover {
+.moveSections:hover {
     background-color: #1E6EF0; /* Cor de fundo ao passar o mouse */
     border-color: #1E6EF0; /* Adiciona borda azul */
 }
 
-.MoveSections:active {
+.moveSections:active {
     background-color: white; /* Fundo branco ao clicar */
     color: #1E6EF0; /* Muda a cor do texto para azul */
     border-color: #1E6EF0; /* Mantém a borda azul */
@@ -127,16 +127,6 @@ nav {
     color: #1E6EF0; /* Muda a cor do texto para azul */
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* Brilho ao clicar */
     transform: scale(0.95); /* Dá um pequeno efeito de "pressionado" */
-}
-
-/* Animação do gradiente */
-@keyframes moveGradient {
-    from {
-        background-position: 0% 50%;
-    }
-    to {
-        background-position: 100% 50%;
-    }
 }
 
 
@@ -189,13 +179,130 @@ nav {
     border-radius: 5px;
 }
 
+main{
+    display: flex;
+    flex-direction: row;
+}
+#messageHome{
+    display: flex;
+    flex-direction: column;
+}
+
+#messageTitleBackground {
+    font-size: 1.8vw;
+    color: white;
+    width: 90%;
+    height: 7vw; /* Mantém altura fixa */
+
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+
+    margin-top: 90px ; /* Auto para centralizar */
+    margin-bottom: 90px;
+    margin-left: 7.5vw;
+    text-align: center;
+    
+    border-radius: 15px; /* Suaviza as bordas */
+    overflow: hidden; /* Garante que o arredondamento não seja cortado */
+    
+    background: linear-gradient(90deg, #81b1ff, #1E6EF0, #92baff);
+    background-size: 200% 200%; /* Aumenta o tamanho do gradiente para permitir o movimento */
+    
+    animation: moveGradient 2s linear infinite alternate;
+
+    /* 🔹 Adiciona a sombra da borda */
+    box-shadow: 6px 6px 12px 2px rgba(43, 46, 51, 0.4);
+}
+#subtitleDev {
+    color: #2B2E33;
+    font-weight: bold;
+    margin-top: -70px; /* Adiciona um pequeno espaço entre o título e o subtítulo */
+    margin-left: 8vw;
+    font-size: 1.4vw; /* Ajuste o tamanho da fonte conforme necessário */
+    opacity: 0.8; /* Deixa o texto meio opaco */
+}
+/* Estilos para os círculos */
+#photosHome {
+    display: flex;
+    position: relative;
+    width: 2vw; 
+    height: 2vw;
+    margin: 2vw;
+}
+
+#circleOneHome, #circleTwoHome, #midCircleWithImage {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+}
+
+#midCircleWithImage {
+    display: flex;
+    top: 50px;
+    left: 10.1vw;
+}
+
+#midCircleWithImage img {
+    top: 50px;
+    left: 10.1vw;
+    border-radius: 50%;
+    object-fit: cover; /* Garante que a imagem fique proporcional */
+      z-index: 3;
+}
+
+#circleOneHome {
+    background: linear-gradient(90deg, #7188AC, #86A4D6);
+    top: 20px;
+    left: 14vw;
+}   
+
+#circleTwoHome {
+    background: linear-gradient(90deg, #679cf1, #7FA8EC);
+    top: 70px;
+    left: 6vw;
+}
+
+
 /* Esconde os botões na tela menor que 795px */
 @media (max-width: 795px) {
-    .MoveSections, #buttonHome {
+    .moveSections, #buttonHome {
         display: none;
     }
-
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+    #messageHome{
+        align-items: center;
+    }
+    #messageTitleBackground{
+        margin: 90px auto ; /* Auto para centralizar */
+        width: 80%;
+        height: 15vw;
+        font-size: 3.0vw;
+    }
+    #subtitleDev{
+        margin-left: 0px;
+        margin-top: -70px; /* Adiciona um pequeno espaço entre o título e o subtítulo */
+        font-size: 2.5vw; /* Ajuste o tamanho da fonte conforme necessário */
+    }
     #menuButton {
         display: block; /* Mostra o botão de menu */
+    }
+    #photoHome, #circleOneHome, #circleTwoHome, #midCircleWithImage{
+        display: none;
+        width: 0%;
+    }
+}
+
+/* Animação do gradiente */
+@keyframes moveGradient {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
     }
 }
