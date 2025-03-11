@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    /* Centraliza verticalmente */
+    background: linear-gradient(135deg, #2B2E33 0%, #2B2E33 35%, #2d456b 55%, #2d456b 100%);
+    padding: 10px 20px;
+    position: relative;
+    justify-content: space-between;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#circleOne,
+#circleTwo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#circleOne {
+    background-color: #1E6EF0;
+    /* Azul sólido */
+    z-index: 2;
+}
+
+#circleTwo {
+    background-color: rgba(30, 110, 240, 0.5);
+    /* Azul translúcido */
+    left: 15px;
+    /* Move um pouco para a direita */
+    z-index: 1;
+}
+
+#M {
+    font-family: 'Kenia', sans-serif;
+    font-size: 70px;
+    color: white;
+    position: absolute;
+    left: 15px;
+    top: -35px;
+    z-index: 3;
+    /* Garante que fique na frente */
+}
+
+#iguel {
+    font-family: 'K2D', sans-serif;
+    font-size: 32px;
+    color: white;
+    margin-top: 30px;
+    padding-top: 1px;
+    margin-left: 66px;
+    /* Afasta do círculo */
+    z-index: 3;
+    /* Garante que fique na frente */
+}
+
+#listNavBar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.MoveSections {
+    font-size: 15px;
+    margin-right: 15px;
+    width: 150px;
+    margin-top: 5px;
+    height: 45px;
+    border-radius: 5%;
+    font-weight: bold;
+    color: white;
+    background-color: transparent; /* Fundo transparente */
+    border: 2px solid transparent; /* Borda transparente */
+    cursor: pointer; /* Cursor de clique */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.MoveSections:hover {
+    background-color: #1E6EF0; /* Cor de fundo ao passar o mouse */
+    border-color: #1E6EF0; /* Adiciona borda azul */
+}
+
+.MoveSections:active {
+    background-color: white; /* Fundo branco ao clicar */
+    color: #1E6EF0; /* Muda a cor do texto para azul */
+    border-color: #1E6EF0; /* Mantém a borda azul */
+}
+
+#buttonHome {
+    font-size: 15px;
+    margin-right: 15px;
+    width: 80px;
+    margin-top: 5px;
+    height: 45px;
+    border-radius: 10%;
+    font-weight: bold;
+    color: white;
+    background-color: #1E6EF0;
+    border: 0;
+    cursor: pointer; /* Cursor de clique */
+    transition: background 0.5s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
+
+/* Gradiente animado ao passar o mouse */
+#buttonHome:hover {
+    background: linear-gradient(90deg, #1E6EF0, #ffffff);
+    background-size: 200% 100%;
+    animation: moveGradient 0.8s linear infinite alternate;
+    box-shadow: 0px 4px 10px rgba(30, 110, 240, 0.4); /* Pequena sombra */
+}
+
+/* Efeito de piscar ao clicar */
+#buttonHome:active {
+    background: white;
+    color: #1E6EF0; /* Muda a cor do texto para azul */
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* Brilho ao clicar */
+    transform: scale(0.95); /* Dá um pequeno efeito de "pressionado" */
+}
+
+/* Animação do gradiente */
+@keyframes moveGradient {
+    from {
+        background-position: 0% 50%;
+    }
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* Esconde o menu por padrão */
+#menuButton {
+    display: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Efeito de hover para o botão de menu */
+#menuButton:hover {
+    background: white;
+    color: #1E6EF0;
+}
+
+/* Lista suspensa oculta por padrão */
+#menuList {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* Estilo dos itens dentro do menu */
+#menuList a {
+    display: block;
+    text-decoration: none;
+    color: #1E6EF0;
+    padding: 8px 12px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre os itens */
+#menuList a:hover {
+    background: #1E6EF0;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Esconde os botões na tela menor que 795px */
+@media (max-width: 795px) {
+    .MoveSections, #buttonHome {
+        display: none;
+    }
+
+    #menuButton {
+        display: block; /* Mostra o botão de menu */
+    }
+}
