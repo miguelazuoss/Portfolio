@@ -13,6 +13,7 @@ document.getElementById("menuButton").addEventListener("click", function() {
     
 });
 
+
 window.addEventListener("resize", function() {
     let menu = document.getElementById("menuList");
     if (window.innerWidth > 795) {

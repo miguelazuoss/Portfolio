@@ -7,7 +7,6 @@ nav {
     display: flex;
     height: 90px;
     align-items: center;
-    /* Centraliza verticalmente */
     background: linear-gradient(135deg, #2B2E33 0%, #2B2E33 35%, #2d456b 55%, #2d456b 100%);
     padding: 10px 20px;
     position: relative;
@@ -30,15 +29,12 @@ nav {
 
 #circleOne {
     background-color: #1E6EF0;
-    /* Azul sólido */
     z-index: 2;
 }
 
 #circleTwo {
     background-color: rgba(30, 110, 240, 0.5);
-    /* Azul translúcido */
     left: 15px;
-    /* Move um pouco para a direita */
     z-index: 1;
 }
 
@@ -50,7 +46,6 @@ nav {
     left: 15px;
     top: -35px;
     z-index: 3;
-    /* Garante que fique na frente */
 }
 
 #iguel {
@@ -60,9 +55,7 @@ nav {
     margin-top: 30px;
     padding-top: 1px;
     margin-left: 66px;
-    /* Afasta do círculo */
     z-index: 3;
-    /* Garante que fique na frente */
 }
 
 #listNavBar {
@@ -73,7 +66,7 @@ nav {
 }
 
 .moveSections {
-    font-size: 15px;
+    font-size: 17px;
     margin-right: 15px;
     width: 150px;
     margin-top: 5px;
@@ -81,21 +74,21 @@ nav {
     border-radius: 5%;
     font-weight: bold;
     color: white;
-    background-color: transparent; /* Fundo transparente */
-    border: 2px solid transparent; /* Borda transparente */
-    cursor: pointer; /* Cursor de clique */
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .moveSections:hover {
-    background-color: #1E6EF0; /* Cor de fundo ao passar o mouse */
-    border-color: #1E6EF0; /* Adiciona borda azul */
+    background-color: #1E6EF0;
+    border-color: #1E6EF0;
 }
 
 .moveSections:active {
-    background-color: white; /* Fundo branco ao clicar */
-    color: #1E6EF0; /* Muda a cor do texto para azul */
-    border-color: #1E6EF0; /* Mantém a borda azul */
+    background-color: white;
+    color: #1E6EF0;
+    border-color: #1E6EF0;
 }
 
 #buttonHome {
@@ -109,28 +102,24 @@ nav {
     color: white;
     background-color: #1E6EF0;
     border: 0;
-    cursor: pointer; /* Cursor de clique */
+    cursor: pointer;
     transition: background 0.5s ease, box-shadow 0.3s ease, transform 0.1s ease;
 }
 
-/* Gradiente animado ao passar o mouse */
 #buttonHome:hover {
     background: linear-gradient(90deg, #1E6EF0, #ffffff);
     background-size: 200% 100%;
     animation: moveGradient 0.8s linear infinite alternate;
-    box-shadow: 0px 4px 10px rgba(30, 110, 240, 0.4); /* Pequena sombra */
+    box-shadow: 0px 4px 10px rgba(30, 110, 240, 0.4);
 }
 
-/* Efeito de piscar ao clicar */
 #buttonHome:active {
     background: white;
-    color: #1E6EF0; /* Muda a cor do texto para azul */
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6); /* Brilho ao clicar */
-    transform: scale(0.95); /* Dá um pequeno efeito de "pressionado" */
+    color: #1E6EF0;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    transform: scale(0.95);
 }
 
-
-/* Esconde o menu por padrão */
 #menuButton {
     display: none;
     font-size: 18px;
@@ -144,13 +133,11 @@ nav {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Efeito de hover para o botão de menu */
 #menuButton:hover {
     background: white;
     color: #1E6EF0;
 }
 
-/* Lista suspensa oculta por padrão */
 #menuList {
     display: none;
     position: absolute;
@@ -162,7 +149,6 @@ nav {
     padding: 10px;
 }
 
-/* Estilo dos itens dentro do menu */
 #menuList a {
     display: block;
     text-decoration: none;
@@ -172,18 +158,71 @@ nav {
     transition: background 0.3s;
 }
 
-/* Efeito ao passar o mouse sobre os itens */
 #menuList a:hover {
     background: #1E6EF0;
     color: white;
     border-radius: 5px;
 }
 
-main{
+main {
     display: flex;
     flex-direction: row;
 }
-#messageHome{
+
+#bannerMobile {
+    display: none;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+
+#bannerMobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes animateBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#imageMobile {
+    display: none;
+    width: 48vw;
+    height: 48vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #1E6EF0, #d9e9fc, #01e1ff);
+    background-size: 300% 300%;
+    animation: animateBorder 2s infinite linear;
+    box-shadow: 0 0 20px rgba(30, 110, 240, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imageMobile img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#messageHome {
     display: flex;
     flex-direction: column;
 }
@@ -192,46 +231,42 @@ main{
     font-size: 1.8vw;
     color: white;
     width: 90%;
-    height: 7vw; /* Mantém altura fixa */
-
+    height: 7vw;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-
-    margin-top: 90px ; /* Auto para centralizar */
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
     margin-bottom: 90px;
     margin-left: 7.5vw;
     text-align: center;
-    
-    border-radius: 15px; /* Suaviza as bordas */
-    overflow: hidden; /* Garante que o arredondamento não seja cortado */
-    
+    border-radius: 15px;
+    overflow: hidden;
     background: linear-gradient(90deg, #81b1ff, #1E6EF0, #92baff);
-    background-size: 200% 200%; /* Aumenta o tamanho do gradiente para permitir o movimento */
-    
+    background-size: 200% 200%;
     animation: moveGradient 2s linear infinite alternate;
-
-    /* 🔹 Adiciona a sombra da borda */
     box-shadow: 6px 6px 12px 2px rgba(43, 46, 51, 0.4);
 }
+
 #subtitleDev {
     color: #2B2E33;
     font-weight: bold;
-    margin-top: -70px; /* Adiciona um pequeno espaço entre o título e o subtítulo */
+    margin-top: -67px;
     margin-left: 8vw;
-    font-size: 1.4vw; /* Ajuste o tamanho da fonte conforme necessário */
-    opacity: 0.8; /* Deixa o texto meio opaco */
+    font-size: 1.4vw;
+    opacity: 0.8;
 }
-/* Estilos para os círculos */
+
 #photosHome {
     display: flex;
     position: relative;
-    width: 2vw; 
+    width: 2vw;
     height: 2vw;
     margin: 2vw;
 }
 
-#circleOneHome, #circleTwoHome, #midCircleWithImage {
+#circleOneHome,
+#circleTwoHome,
+#midCircleWithImage {
     position: absolute;
     width: 20vw;
     height: 20vw;
@@ -248,15 +283,15 @@ main{
     top: 50px;
     left: 10.1vw;
     border-radius: 50%;
-    object-fit: cover; /* Garante que a imagem fique proporcional */
-      z-index: 3;
+    object-fit: cover;
+    z-index: 3;
 }
 
 #circleOneHome {
     background: linear-gradient(90deg, #7188AC, #86A4D6);
     top: 20px;
     left: 14vw;
-}   
+}
 
 #circleTwoHome {
     background: linear-gradient(90deg, #679cf1, #7FA8EC);
@@ -264,44 +299,130 @@ main{
     left: 6vw;
 }
 
+#talkToMe {
+    font-size: 2vw;
+    margin-left: 8vw;
+    width: 15vw;
+    margin-top: 2.0vw;
+    height: 5vw;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #1E6EF0;
+    border: 0;
+    cursor: pointer;
+    overflow: hidden;
+    background: linear-gradient(90deg, #1E6EF0, #92baff);
+    background-size: 200% 200%;
+    transition: background 0.5s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
 
-/* Esconde os botões na tela menor que 795px */
+#talkToMe:hover {
+    background: linear-gradient(90deg, #1E6EF0, #ffffff);
+    background-size: 200% 100%;
+    animation: moveGradient 0.8s linear infinite alternate;
+    box-shadow: 0px 4px 10px rgba(30, 110, 240, 0.4);
+}
+
+#talkToMe:active {
+    background: white;
+    color: #1E6EF0;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    transform: scale(0.95);
+}
+
+#imageMain img {
+    position: flex;
+    margin-top: 100px;
+    margin-left: 10vw;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    height: 00px;
+    z-index: -1;
+}
+
+#startSection {
+    margin-top: 20vw;
+    position: relative;
+    width: 100%;
+    height: 150vw;
+    background: linear-gradient(90deg, #4285f0, #6fa6ff);
+    transition: transform 0.3s ease-out, background 0.3s ease-out;
+}
+
 @media (max-width: 795px) {
-    .moveSections, #buttonHome {
+    .moveSections,
+    #buttonHome {
         display: none;
     }
-    main{
-        display: flex;
-        flex-direction: column;
-    }
-    #messageHome{
-        align-items: center;
-    }
-    #messageTitleBackground{
-        margin: 90px auto ; /* Auto para centralizar */
-        width: 80%;
-        height: 15vw;
-        font-size: 3.0vw;
-    }
-    #subtitleDev{
-        margin-left: 0px;
-        margin-top: -70px; /* Adiciona um pequeno espaço entre o título e o subtítulo */
-        font-size: 2.5vw; /* Ajuste o tamanho da fonte conforme necessário */
-    }
+
     #menuButton {
-        display: block; /* Mostra o botão de menu */
-    }
-    #photoHome, #circleOneHome, #circleTwoHome, #midCircleWithImage{
-        display: none;
-        width: 0%;
+        display: block;
     }
 }
 
-/* Animação do gradiente */
+@media (max-width: 605px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 45vh;
+    }
+
+    #messageHome {
+        align-items: center;
+    }
+
+    #messageTitleBackground {
+        margin: 90px auto;
+        width: 90%;
+        height: 19vw;
+        font-size: 3.3vw;
+    }
+
+    #subtitleDev {
+        margin-left: 0px;
+        margin-top: -65px;
+        font-size: 3.5vw;
+    }
+
+    #menuButton {
+        display: block;
+    }
+
+    #photoHome,
+    #circleOneHome,
+    #circleTwoHome,
+    #midCircleWithImage {
+        display: none;
+        width: 0%;
+    }
+
+    #talkToMe {
+        height: 15vw;
+        width: 40vw;
+        font-size: 4vw;
+        margin-left: 0;
+    }
+
+    #bannerMobile {
+        width: 100%;
+        height: 55vw;
+        display: block;
+        max-height: 55vw;
+        margin-bottom: -6vw;
+    }
+
+    #imageMobile {
+        display: block;
+    }
+}
+
 @keyframes moveGradient {
     from {
         background-position: 0% 50%;
     }
+
     to {
         background-position: 100% 50%;
     }
